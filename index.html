@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proto_AB - Tienda Online</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <header>
+        <nav>
+            <img id="logoTienda" src="assets/logo.jpeg" alt="Logo de la tienda" class="logo-tienda">
+            <div class="logo">Happy Print</div>
+            <input type="text" placeholder="Buscar productos...">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Categorías</a></li>
+                <li class="nav-item carrito-container">
+                    <a href="carrito.html" class="carrito-icono">
+                        🛒 <span id="contadorCarrito" class="contador-carrito">0</span>
+                    </a>
+                </li>
+                <li><a href="perfil.html">Mi Cuenta</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Banner Principal -->
+    <section class="banner">
+        <h1>Ofertas Exclusivas Hoy</h1>
+        <p>¡Compra ahora y ahorra hasta un 50%!</p>
+        <button>Ver Ofertas</button>
+    </section>
+    
+    <!-- Sección de Productos -->
+    <section class="productos">
+        <h2>Productos Destacados</h2>
+        <div class="grid-productos">
+            <!-- Aquí se insertarán productos dinámicamente -->
+        </div>
+    </section>
+
+    <!-- Modal de Personalización -->
+    <div id="modalPersonalizacion" class="modal">
+        <div class="modal-contenido">
+            <h2>Personaliza tu playera</h2>
+
+            <!-- Vista previa con Canvas (Movido arriba) -->
+            <div class="preview-container">
+                <canvas id="previewCanvas" width="500" height="500"></canvas>
+            </div>
+
+            <label for="talla">Talla:</label>
+            <select id="talla">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+
+            <label for="imagenPersonalizada">Sube una imagen:</label>
+            <label for="imagenPersonalizada" class="file-input-label">
+                <i class="fas fa-upload"></i> Subir Imagen
+            </label>
+            <div class="file-input-container">
+                <input type="file" id="imagenPersonalizada" accept="image/*">
+            </div>
+            <span id="file-name" class="file-name">Ningún archivo seleccionado</span>
+            
+            <button id="confirmarPersonalizacion">Añadir al Carrito</button>
+            <button id="cerrarModal">Cancelar</button>
+        </div>
+    </div>
+
+    
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
