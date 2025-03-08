@@ -607,7 +607,7 @@ nav input {
 @media screen and (max-width: 768px) {
     .menu-toggle {
         display: block;
-        margin-right: 100px;
+        margin-right: 20px;
     }
 
     .nav-links {
