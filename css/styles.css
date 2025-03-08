@@ -500,6 +500,7 @@ nav input {
     /* Ocultar la lista de navegación por defecto en móviles */
     .logo {
         display: none;
+        margin-right: 50px;
     }
     .nav-links {
         display: none;
