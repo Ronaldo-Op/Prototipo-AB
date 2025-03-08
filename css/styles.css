@@ -500,8 +500,8 @@ nav input {
     /* Ocultar la lista de navegación por defecto en móviles */
     .logo {
         display: none;
-        margin-right: 200px;
     }
+
     .nav-links {
         display: none;
         flex-direction: column;
@@ -607,6 +607,7 @@ nav input {
 @media screen and (max-width: 768px) {
     .menu-toggle {
         display: block;
+        margin-right: 100px;
     }
 
     .nav-links {
