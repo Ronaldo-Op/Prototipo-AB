@@ -570,6 +570,10 @@ nav input {
     .main-content {
         padding: 10px;
     }
+    /* Mostrar la lista cuando se active el menú */
+    .nav-links.show {
+        display: flex;
+    }
 }
 
 /* Estilos para pantallas muy pequeñas (teléfonos compactos) */
