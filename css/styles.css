@@ -34,6 +34,7 @@ nav {
 }
 nav .logo-tienda {
     border-radius: 50%;
+    margin-left: -20px;
 }
 
 nav .logo {
