@@ -9,6 +9,7 @@ body {
 
 .main-content {
     margin-top: 50px;
+    width: 100%;
 }
 
 /* Estilos para la barra de navegación fija */
