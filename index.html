@@ -7,25 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Barra de Navegación -->
-    <header>
-        <nav>
-            <img id="logoTienda" src="assets/logo.jpeg" alt="Logo de la tienda" class="logo-tienda">
-            <div class="logo">Happy Print</div>
-            <input type="text" placeholder="Buscar productos...">
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Categorías</a></li>
-                <li class="nav-item carrito-container">
-                    <a href="carrito.html" class="carrito-icono">
-                        🛒 <span id="contadorCarrito" class="contador-carrito">0</span>
-                    </a>
-                </li>
-                <li><a href="perfil.html">Mi Cuenta</a></li>
-            </ul>
-        </nav>
-    </header>
-    
+    <div class="main-content">
     <!-- Banner Principal -->
     <section class="banner">
         <h1>Ofertas Exclusivas Hoy</h1>
@@ -72,8 +54,9 @@
             <button id="cerrarModal">Cancelar</button>
         </div>
     </div>
-
+    </div>
     
     <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/navbar.js"></script>
 </body>
 </html>

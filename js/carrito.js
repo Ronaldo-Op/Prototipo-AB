@@ -114,18 +114,14 @@ document.getElementById("btn-pagar").addEventListener("click", function () {
     document.getElementById("modalPago").style.display = "flex";
 });
 
-// Cerrar modal de pago
-document.getElementById("cerrarModalPago").addEventListener("click", function () {
-    document.getElementById("modalPago").style.display = "none";
-});
-
 document.getElementById("btnConfirmarPago").addEventListener("click", function () {
     const btnPagar = document.getElementById("btnConfirmarPago");
     const cerrarModal = document.getElementById("cerrarModalPago");
     const resumenCompra = document.getElementById("resumenCompra");
     const resumenTotalTexto = document.getElementById("resumenTotalTexto");
     const tituloModal = document.getElementById("tituloModal");
-    const procesandoPago = document.getElementById("procesandoPago");
+
+    console.log("🔄 Procesando pago...");
 
     // Ocultar el resumen de compra y botones
     resumenCompra.style.display = "none";
@@ -133,35 +129,40 @@ document.getElementById("btnConfirmarPago").addEventListener("click", function (
     btnPagar.style.display = "none";
     cerrarModal.style.display = "none";
 
-    // Mostrar la animación de "Procesando pago..."
-    procesandoPago.style.display = "block";
+    // Mostrar mensaje de compra realizada con botón de aceptar
+    tituloModal.innerHTML = "✅ ¡Compra realizada!";
+    resumenCompra.innerHTML = `
+        <div class="compra-realizada">
+            <p>¡Gracias por tu compra! 🎉</p>
+            <button id="btnAceptarCompra">Aceptar</button>
+        </div>
+    `;
+    resumenCompra.style.display = "block";
 
+    // Limpiar el carrito después de la compra
+    console.log("🗑 Limpiando carrito...");
+    localStorage.removeItem("carrito");
+
+    // Actualizar el contador del carrito
+    actualizarContadorCarrito();
+
+    // Agregar evento para cerrar el modal al hacer clic en "Aceptar"
     setTimeout(() => {
-        // Después de 3 segundos, mostrar la pantalla de "Compra realizada"
-        procesandoPago.style.display = "none";
-        tituloModal.innerHTML = "✅ ¡Compra realizada!";
-
-        // Agregar mensaje de éxito
-        resumenCompra.innerHTML = `
-            <div class="compra-realizada">
-                <p>¡Gracias por tu compra! 🎉</p>
-            </div>
-        `;
-        resumenCompra.style.display = "block";
-
-        // Limpiar el carrito después de la compra
-        localStorage.removeItem("carrito");
-
-        // Actualizar el contador del carrito
-        actualizarContadorCarrito();
-
-        // Redirigir a la página principal después de 3 segundos
-        setTimeout(() => {
-            window.location.href = "index.html";
-        }, 3000);
-    }, 3000);
+        document.getElementById("btnAceptarCompra").addEventListener("click", function () {
+            document.getElementById("modalPago").style.display = "none";
+            location.reload(); // 🔹 Recargar la página
+        });
+    }, 100);
 });
 
+document.getElementById("btnPrueba").addEventListener("click", function () {
+    const pantallaCarga = document.getElementById("pantallaCarga");
 
+    // Mostrar la pantalla de carga
+    pantallaCarga.style.display = "flex";
 
-
+    // Ocultar la pantalla de carga después de 4 segundos
+    setTimeout(() => {
+        pantallaCarga.style.display = "none";
+    }, 4000);
+});
