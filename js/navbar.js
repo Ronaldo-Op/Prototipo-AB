@@ -24,8 +24,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.getElementById("menu-toggle");
     const navLinks = document.getElementById("navLinks");
 
+    if (!menuToggle || !navLinks) {
+        console.warn("⚠️ No se encontró 'menu-toggle' o 'navLinks' en esta página.");
+        return; // Detener ejecución si los elementos no existen
+    }
+
+    console.log("✅ Navbar cargada correctamente.");
+
     menuToggle.addEventListener("click", function () {
-        navLinks.classList.toggle("show"); // Alternar la visibilidad del menú
+        navLinks.classList.toggle("show"); // Alternar visibilidad del menú
     });
 
     // Cerrar el menú cuando se hace clic en un enlace
@@ -35,3 +42,4 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
