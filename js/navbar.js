@@ -20,6 +20,18 @@ async function cargarNavbar() {
 // ✅ Ejecutar la carga de la navbar al abrir cualquier página
 document.addEventListener("DOMContentLoaded", cargarNavbar);
 
-document.getElementById("menu-toggle").addEventListener("click", function () {
-    document.querySelector(".nav-links").classList.toggle("show");
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("show"); // Alternar la visibilidad del menú
+    });
+
+    // Cerrar el menú cuando se hace clic en un enlace
+    document.querySelectorAll(".nav-links li a").forEach(link => {
+        link.addEventListener("click", function () {
+            navLinks.classList.remove("show");
+        });
+    });
 });

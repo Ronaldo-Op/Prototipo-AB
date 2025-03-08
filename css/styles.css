@@ -497,6 +497,18 @@ nav input {
 /* Estilos para pantallas pequeñas (teléfonos) */
 @media screen and (max-width: 768px) {
     /* Ajustar la navbar */
+    /* Ocultar la lista de navegación por defecto en móviles */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #232f3e;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+        text-align: center;
+    }
     nav {
         align-items: center;
         text-align: center;
