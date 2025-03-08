@@ -498,6 +498,9 @@ nav input {
 @media screen and (max-width: 768px) {
     /* Ajustar la navbar */
     /* Ocultar la lista de navegación por defecto en móviles */
+    .logo {
+        display: none;
+    }
     .nav-links {
         display: none;
         flex-direction: column;
@@ -509,6 +512,7 @@ nav input {
         padding: 10px 0;
         text-align: center;
     }
+
     nav {
         align-items: center;
         text-align: center;
