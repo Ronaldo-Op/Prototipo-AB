@@ -33,11 +33,14 @@ function mostrarCarrito() {
     carrito.forEach((producto, index) => {
         const item = document.createElement("div");
         item.classList.add("carrito-item");
-
-        const imagenSrc = producto.imagen ? producto.imagen : "assets/default.jpg";
+        const imagenBase = producto.imagenBase ? producto.imagenBase : "assets/playera.png"; // Imagen base del producto
+        const imagenPersonalizada = producto.imagenPersonalizada ? producto.imagenPersonalizada : null; // Imagen personalizada
 
         item.innerHTML = `
-            <img src="${imagenSrc}" alt="${producto.nombre}">
+            <div class="contenedor-imagen">
+                <img src="${imagenBase}" alt="${producto.nombre}" class="imagen-base">
+                ${imagenPersonalizada ? `<img src="${imagenPersonalizada}" alt="Personalización" class="imagen-superpuesta">` : ""}
+            </div>
             <div class="info">
                 <h3>${producto.nombre}</h3>
                 <p>Precio: $${producto.precio}</p>
@@ -45,6 +48,7 @@ function mostrarCarrito() {
                 <button class="eliminar-btn" data-index="${index}">Eliminar</button>
             </div>
         `;
+
         listaCarrito.appendChild(item);
         total += producto.precio * producto.cantidad;
     });

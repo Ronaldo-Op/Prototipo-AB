@@ -58,6 +58,7 @@ const canvas = document.getElementById("previewCanvas");
 const ctx = canvas.getContext("2d");
 const imgPlayera = new Image();
 imgPlayera.src = "assets/playera.png"; // Imagen base de la playera
+let imagenBase64 = null;
 
 const imagenSubida = new Image(); // Imagen personalizada subida por el usuario
 
@@ -94,10 +95,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (file) {
             const reader = new FileReader();
             reader.onload = function (e) {
-                imagenSubida.src = e.target.result;
-                imagenSubida.onload = function () {
-                    actualizarVistaPrevia();
-                };
+                imagenBase64 = e.target.result; // 💾 Guardamos la imagen como base64
+                imagenSubida.src = imagenBase64;
+                imagenSubida.onload = () => actualizarVistaPrevia();
             };
             reader.readAsDataURL(file);
         }
@@ -106,18 +106,17 @@ document.addEventListener("DOMContentLoaded", function () {
     // Confirmar personalización y agregar al carrito
     btnConfirmar.addEventListener("click", () => {
         if (!productoSeleccionado) return;
-
         const talla = document.getElementById("talla").value;
-
         agregarAlCarrito(
             productoSeleccionado.id,
             `${productoSeleccionado.nombre} (Talla: ${talla})`,
             productoSeleccionado.precio,
-            productoSeleccionado.imagen
+            productoSeleccionado.imagen, // Imagen base del producto
+            imagenBase64 // Imagen personalizada en capa superior
         );
-
         modal.style.display = "none";
     });
+    
 });
 
 // Función para actualizar la vista previa en el Canvas (Ahora con imagen más grande)

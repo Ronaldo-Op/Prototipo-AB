@@ -1,13 +1,13 @@
 export let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 // Agregar un producto al carrito
-export function agregarAlCarrito(id, nombre, precio, imagen) {
+export function agregarAlCarrito(id, nombre, precio, imagenBase, imagenPersonalizada) {
     const productoExistente = carrito.find(item => item.id === id);
 
     if (productoExistente) {
         productoExistente.cantidad += 1;
     } else {
-        carrito.push({ id, nombre, precio, imagen, cantidad: 1 });
+        carrito.push({ id, nombre, precio, imagenBase, imagenPersonalizada, cantidad: 1 });
     }
 
     guardarCarrito();
