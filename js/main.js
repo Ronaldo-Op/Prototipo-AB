@@ -76,6 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
     window.abrirModalPersonalizacion = function (id, nombre, precio, imagen) {
         productoSeleccionado = { id, nombre, precio, imagen };
         modal.style.display = "flex";
+        imagenSubida.src = ""; // Limpia previo
+        fileInput.value = "";
         // Cargar la imagen en el canvas
         imgPlayera.src = imagen || "assets/playera.png";
         console.log(imagen)
@@ -141,3 +143,23 @@ window.agregarAlCarrito = agregarAlCarrito; // Hace la función accesible en ind
 document.addEventListener("DOMContentLoaded", function () {
     actualizarContadorCarrito(); // 🔹 Se ejecuta cuando la página carga
 });
+
+function cerrarModalPersonalizacion() {
+    const fileInput = document.getElementById("imagenPersonalizada");
+    
+    // 🔁 Limpiar imagen personalizada
+    imagenBase64 = null;
+    imagenSubida.src = ""; // Limpia el canvas si había algo cargado
+
+    // 🧼 Limpiar input file
+    if (fileInput) {
+        fileInput.value = "";
+    }
+
+    // 🔄 Refrescar el canvas con solo la playera base
+    actualizarVistaPrevia();
+
+    // 🧊 Ocultar el modal
+    const modal = document.getElementById("modalPersonalizacion");
+    modal.style.display = "none";
+}
