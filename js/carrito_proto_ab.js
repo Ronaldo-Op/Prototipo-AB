@@ -2,12 +2,27 @@ export let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 // Agregar un producto al carrito
 export function agregarAlCarrito(id, nombre, precio, imagenBase, imagenPersonalizada) {
-    const productoExistente = carrito.find(item => item.id === id);
+    let productoExistente = null;
+
+    if (!imagenPersonalizada) {
+        // Solo busca coincidencias si NO es personalizado
+        productoExistente = carrito.find(item =>
+            item.id === id && !item.imagenPersonalizada
+        );
+    }
 
     if (productoExistente) {
         productoExistente.cantidad += 1;
     } else {
-        carrito.push({ id, nombre, precio, imagenBase, imagenPersonalizada, cantidad: 1 });
+        // Agregar producto como único (ya sea personalizado o nuevo)
+        carrito.push({
+            id,
+            nombre,
+            precio,
+            imagenBase,
+            imagenPersonalizada,
+            cantidad: 1
+        });
     }
 
     guardarCarrito();
@@ -48,4 +63,24 @@ export function actualizarContadorCarrito() {
             contador.style.display = "none";
         }
     }
+}
+
+export function cerrarModalPersonalizacion() {
+    const fileInput = document.getElementById("imagenPersonalizada");
+    
+    // 🔁 Limpiar imagen personalizada
+    imagenBase64 = null;
+    imagenSubida.src = ""; // Limpia el canvas si había algo cargado
+
+    // 🧼 Limpiar input file
+    if (fileInput) {
+        fileInput.value = "";
+    }
+
+    // 🔄 Refrescar el canvas con solo la playera base
+    actualizarVistaPrevia();
+
+    // 🧊 Ocultar el modal
+    const modal = document.getElementById("modalPersonalizacion");
+    modal.style.display = "none";
 }

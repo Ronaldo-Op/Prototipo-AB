@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Cerrar modal
     btnCerrar.addEventListener("click", () => {
-        modal.style.display = "none";
+        cerrarModalPersonalizacion();
     });
 
     // Subir imagen personalizada y mostrarla en la playera
@@ -116,10 +116,30 @@ document.addEventListener("DOMContentLoaded", function () {
             productoSeleccionado.imagen, // Imagen base del producto
             imagenBase64 // Imagen personalizada en capa superior
         );
-        modal.style.display = "none";
+        cerrarModalPersonalizacion();
     });
     
 });
+
+export function cerrarModalPersonalizacion() {
+    const fileInput = document.getElementById("imagenPersonalizada");
+    
+    // 🔁 Limpiar imagen personalizada
+    imagenBase64 = null;
+    imagenSubida.src = ""; // Limpia el canvas si había algo cargado
+
+    // 🧼 Limpiar input file
+    if (fileInput) {
+        fileInput.value = "";
+    }
+
+    // 🔄 Refrescar el canvas con solo la playera base
+    actualizarVistaPrevia();
+
+    // 🧊 Ocultar el modal
+    const modal = document.getElementById("modalPersonalizacion");
+    modal.style.display = "none";
+}
 
 // Función para actualizar la vista previa en el Canvas (Ahora con imagen más grande)
 function actualizarVistaPrevia() {
@@ -143,23 +163,3 @@ window.agregarAlCarrito = agregarAlCarrito; // Hace la función accesible en ind
 document.addEventListener("DOMContentLoaded", function () {
     actualizarContadorCarrito(); // 🔹 Se ejecuta cuando la página carga
 });
-
-function cerrarModalPersonalizacion() {
-    const fileInput = document.getElementById("imagenPersonalizada");
-    
-    // 🔁 Limpiar imagen personalizada
-    imagenBase64 = null;
-    imagenSubida.src = ""; // Limpia el canvas si había algo cargado
-
-    // 🧼 Limpiar input file
-    if (fileInput) {
-        fileInput.value = "";
-    }
-
-    // 🔄 Refrescar el canvas con solo la playera base
-    actualizarVistaPrevia();
-
-    // 🧊 Ocultar el modal
-    const modal = document.getElementById("modalPersonalizacion");
-    modal.style.display = "none";
-}
