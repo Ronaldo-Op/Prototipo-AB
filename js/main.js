@@ -97,13 +97,20 @@ document.addEventListener("DOMContentLoaded", function () {
         if (file) {
             const reader = new FileReader();
             reader.onload = function (e) {
-                imagenBase64 = e.target.result; // 💾 Guardamos la imagen como base64
+                imagenBase64 = e.target.result;
                 imagenSubida.src = imagenBase64;
-                imagenSubida.onload = () => actualizarVistaPrevia();
+    
+                // Esperar a que la imagen se cargue antes de habilitar confirmación
+                imagenSubida.onload = function () {
+                    actualizarVistaPrevia();
+                    document.getElementById("confirmarPersonalizacion").disabled = false;
+                };
             };
             reader.readAsDataURL(file);
+            document.getElementById("confirmarPersonalizacion").disabled = true;
         }
     });
+    
 
     // Confirmar personalización y agregar al carrito
     btnConfirmar.addEventListener("click", () => {
