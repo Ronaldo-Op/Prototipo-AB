@@ -64,23 +64,3 @@ export function actualizarContadorCarrito() {
         }
     }
 }
-
-export function cerrarModalPersonalizacion() {
-    const fileInput = document.getElementById("imagenPersonalizada");
-    
-    // 🔁 Limpiar imagen personalizada
-    imagenBase64 = null;
-    imagenSubida.src = ""; // Limpia el canvas si había algo cargado
-
-    // 🧼 Limpiar input file
-    if (fileInput) {
-        fileInput.value = "";
-    }
-
-    // 🔄 Refrescar el canvas con solo la playera base
-    actualizarVistaPrevia();
-
-    // 🧊 Ocultar el modal
-    const modal = document.getElementById("modalPersonalizacion");
-    modal.style.display = "none";
-}
