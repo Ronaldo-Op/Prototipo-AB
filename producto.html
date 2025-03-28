@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Producto | Proto_AB</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="main-content">
+      <div class="producto-detalle">
+        <div class="producto-imagen">
+          <img id="producto-imagen" src="" alt="Imagen del producto" />
+        </div>
+        <div class="producto-info">
+          <h1 id="producto-nombre">Nombre del producto</h1>
+          <p id="producto-descripcion">Descripción del producto</p>
+          <h2 id="producto-precio">$0.00</h2>
+
+          <label for="talla">Talla:</label>
+          <select id="talla">
+            <option value="S">S</option>
+            <option value="M" selected>M</option>
+            <option value="L">L</option>
+          </select>
+
+          <button id="btn-agregar">Añadir al carrito</button>
+        </div>
+      </div>
+      <section class="vr-section">
+        <div class="vr-contenido">
+          <div class="vr-texto">
+            <h2>👓 Explora la prenda en Realidad Aumentada</h2>
+            <p>Escanea el código QR con tu celular o toca el botón si estás en móvil.</p>
+            <a href="https://studio.onirix.com/modelviewer/05df24d3132b437caa6e121af0e4a6df?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUxMjUzLCJhc3NldElkIjo1MzY3MTExLCJyb2xlIjo4LCJpYXQiOjE3NDMwOTc1OTl9.CREOShM8w1h3Dmp82ivUrkwQFhmo2Co8TfNyo2zPGhs" target="_blank" class="vr-boton">Ver en VR</a>
+          </div>
+          <div class="vr-qr">
+            <img src="assets/qr-vr.jpeg" alt="Código QR VR">
+          </div>
+        </div>
+      </section>
+      
+    </div>
+
+    <script type="module" src="js/producto.js"></script>
+    <script type="module" src="js/navbar.js"></script>
+  </body>
+</html>

@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
+    width: 100%;
 }
 
 .main-content {
@@ -22,6 +23,7 @@ body {
     background-color: #232f3e; /* Color tipo Amazon */
     padding: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
 }
 
 nav {
@@ -622,7 +624,7 @@ nav input {
 }
 
 /* Mostrar botón hamburguesa en móviles */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 940px) {
     .menu-toggle {
         display: block;
         margin-right: 20px;
@@ -648,3 +650,195 @@ nav input {
         display: flex;
     }
 }
+
+
+/* Página de producto */
+.producto-detalle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 40px auto;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Columna izquierda: imagen del producto */
+  .producto-imagen {
+    flex: 1;
+    min-width: 280px;
+    max-width: 480px;
+  }
+  
+  .producto-imagen img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    object-fit: contain;
+  }
+  
+  /* Columna derecha: info y acciones */
+  .producto-info {
+    flex: 1.5;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .producto-info h1 {
+    font-size: 28px;
+    color: #232f3e;
+    margin: 0;
+  }
+  
+  .producto-info p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+  }
+  
+  .producto-info h2 {
+    font-size: 22px;
+    color: #b12704;
+    margin: 10px 0;
+  }
+  
+  .producto-info label {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .producto-info select,
+  .producto-info input[type="file"] {
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .producto-info button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .producto-info button:hover {
+    background-color: #e68a00;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .producto-detalle {
+      flex-direction: column;
+      padding: 15px;
+    }
+  
+    .producto-imagen,
+    .producto-info {
+      max-width: 100%;
+    }
+  }
+  
+  
+  /* Animación al pasar el mouse sobre un producto */
+.producto-item {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .producto-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+  }
+  
+/* Sección VR moderna */
+.vr-section {
+    background: linear-gradient(to right, #232f3e, #1a2533);
+    color: white;
+    padding: 40px 20px;
+    padding-top: 20px;
+    margin-top: 40px;
+  }
+  
+  .vr-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .vr-texto {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .vr-texto h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+  
+  .vr-texto p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .vr-boton {
+    background-color: #ff9900;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background 0.3s ease;
+  }
+  
+  .vr-boton:hover {
+    background-color: #e68a00;
+  }
+  
+  .vr-qr {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .vr-qr img {
+    width: 160px;
+    max-width: 100%;
+    border-radius: 10px;
+    border: 2px solid #ff9900;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .vr-contenido {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .vr-texto h2 {
+      font-size: 22px;
+    }
+  
+    .vr-qr img {
+      margin-top: 20px;
+    }
+  }
+  

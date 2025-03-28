@@ -21,20 +21,33 @@ async function cargarProductos() {
         productos.forEach(producto => {
             const item = document.createElement("div");
             item.classList.add("producto-item");
-
+        
             const imagenSrc = producto.imagen ? producto.imagen : "assets/default.jpg";
-
+        
             item.innerHTML = `
                 <img src="${imagenSrc}" alt="${producto.nombre}">
                 <h3>${producto.nombre}</h3>
                 <p>$${producto.precio}</p>
-                <button onclick="abrirModalPersonalizacion('${producto.id}', '${producto.nombre}', ${producto.precio}, '${imagenSrc}')">
-                    Personalizar y Añadir al Carrito
-                </button>
+                <button class="personalizar-btn">Personalizar y Añadir al Carrito</button>
             `;
-
+        
+            // Redirigir al hacer clic en la tarjeta (excepto el botón)
+            item.addEventListener("click", (e) => {
+                if (!e.target.classList.contains("personalizar-btn")) {
+                    localStorage.setItem("productoSeleccionado", JSON.stringify(producto));
+                    window.location.href = "producto.html";
+                }
+            });
+        
+            // Botón de personalización (delegado desde la tarjeta)
+            item.querySelector(".personalizar-btn").addEventListener("click", (e) => {
+                e.stopPropagation(); // Prevenir redirección
+                abrirModalPersonalizacion(producto.id, producto.nombre, producto.precio, imagenSrc);
+            });
+        
             productosContainer.appendChild(item);
         });
+        
     }
 
     console.log(`✅ Se han cargado ${productos.length * repeticionesPorCarga} productos en la página.`);
