@@ -16,14 +16,25 @@
           <h1 id="producto-nombre">Nombre del producto</h1>
           <p id="producto-descripcion">Descripción del producto</p>
           <h2 id="producto-precio">$0.00</h2>
-
-          <label for="talla">Talla:</label>
-          <select id="talla">
-            <option value="S">S</option>
-            <option value="M" selected>M</option>
-            <option value="L">L</option>
-          </select>
           <button id="btnPersonalizar">Personalizar y Añadir al Carrito</button>
+
+          <div class="sellos-calidad">
+            <img
+              src="assets/algodon.png"
+              alt="100% Algodón"
+              title="100% Algodón"
+            />
+            <img
+              src="assets/calidad.png"
+              alt="Ultra Cómoda"
+              title="Ultra Cómoda"
+            />
+            <img
+              src="assets/original.png"
+              alt="Garantía de Calidad"
+              title="Garantía de Calidad"
+            />
+          </div>
         </div>
       </div>
       <section class="vr-section">
@@ -49,36 +60,38 @@
     </div>
     <!-- Modal de Personalización -->
     <div id="modalPersonalizacion" class="modal">
-        <div class="modal-contenido">
+      <div class="modal-contenido">
         <div class="modal-contenido-1">
-            <h2>Personaliza tu playera</h2>
+          <h2>Personaliza tu playera</h2>
 
-            <!-- Vista previa con Canvas (Movido arriba) -->
-            <div class="preview-container">
-                <canvas id="previewCanvas" width="500" height="500"></canvas>
-            </div>
+          <!-- Vista previa con Canvas (Movido arriba) -->
+          <div class="preview-container">
+            <canvas id="previewCanvas" width="500" height="500"></canvas>
+          </div>
 
-            <label for="talla">Talla:</label>
-            <select id="talla" class="talla">
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-            </select>
+          <label for="talla">Talla:</label>
+          <select id="talla" class="talla">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+          </select>
 
-            <label for="imagenPersonalizada">Sube una imagen:</label>
-            <label for="imagenPersonalizada" class="file-input-label">
-                <i class="fas fa-upload"></i> Subir Imagen
-            </label>
-            <div class="file-input-container">
-                <input type="file" id="imagenPersonalizada" accept="image/*">
-            </div>
-            <span id="file-name" class="file-name">Ningún archivo seleccionado</span>
-            
-            <button id="confirmarPersonalizacion">Añadir al Carrito</button>
-            <button id="cerrarModal">Cancelar</button>
+          <label for="imagenPersonalizada">Sube una imagen:</label>
+          <label for="imagenPersonalizada" class="file-input-label">
+            <i class="fas fa-upload"></i> Subir Imagen
+          </label>
+          <div class="file-input-container">
+            <input type="file" id="imagenPersonalizada" accept="image/*" />
+          </div>
+          <span id="file-name" class="file-name"
+            >Ningún archivo seleccionado</span
+          >
+
+          <button id="confirmarPersonalizacion">Añadir al Carrito</button>
+          <button id="cerrarModal">Cancelar</button>
         </div>
-        </div>
+      </div>
     </div>
 
     <script type="module" src="js/producto.js"></script>
