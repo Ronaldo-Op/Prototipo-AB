@@ -31,17 +31,18 @@ body {
     width: 100%;
     position: fixed;
     top: 0;
-    left: 0;
+    left: -10px;
     background-color: #232f3e;
-    padding: 15px;
+    padding: 5px;
     padding-top: 5px;
     padding-bottom: 0;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 9999;
+    z-index: 10;
     margin-bottom: 0px;
   }
   
   nav {
+    padding-left: 10px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -80,7 +81,7 @@ body {
     justify-content: flex-start;   /* Alineación a la izquierda */
     gap: 20px;                     /* Espaciado uniforme entre botones */
     margin: 0;
-    padding: 4px 0;               /* Padding horizontal para mantener margen */
+    padding: 4px 10px;               /* Padding horizontal para mantener margen */
     background-color: #232f3e;     /* Asegura fondo si está sobre imagen o transparente */
     width: 100%;
   }
@@ -111,8 +112,8 @@ body {
   
   .contador-carrito {
     position: absolute;
-    top: 0px;
-    right: 70px;
+    top: -5px;
+    right: -5px;
     background: #ff9900;
     color: white;
     font-size: 12px;
@@ -296,16 +297,24 @@ body {
     z-index: 1000;
   }
   
-  .modal-contenido {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 600px;
-    text-align: center;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.3s ease-in-out;
-  }
+.modal-contenido {
+  background: #ffffff;
+  padding: 0 20px;
+  border-radius: 10px;
+  width: 90%;
+  height: 86%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Espaciado interno suave entre elementos */
+}
+.modal-contenido h2 {
+    margin: 11px 0;
+}
+  
   
   @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.95); }
@@ -315,24 +324,24 @@ body {
   .preview-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     padding: 10px;
     background: #f5f5f5;
     border-radius: 10px;
     border: 2px solid #ddd;
-    width: 100%;
-    max-width: 400px;
+    width: 90%;
+    height: 50%;
     height: auto;
-    margin-left: auto;
+    margin-left: 5px;
     margin-right: auto;
   }
   
   .modal button {
-    width: 100%;
+    width: 197px;
     background: #ff9900;
     border: none;
-    padding: 12px;
-    margin: 10px 0;
+    padding: 10px;
+    margin: 5px 0;
     cursor: pointer;
     font-size: 16px;
     color: white;
@@ -348,7 +357,7 @@ body {
   .modal input {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 5px 0;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 14px;
@@ -358,7 +367,7 @@ body {
   .file-input-container {
     position: relative;
     width: 100%;
-    margin: 10px 0;
+    margin: 5px 0;
   }
   .file-input-container input[type="file"] {
     opacity: 0;
@@ -373,7 +382,7 @@ body {
     justify-content: center;
     background: #232f3e;
     color: white;
-    padding: 12px;
+    padding: 10px;
     font-size: 16px;
     font-weight: bold;
     border-radius: 5px;
@@ -383,9 +392,10 @@ body {
   .file-input-label:hover {
     background: #1d252e;
   }
+
   .file-input-label i {
     margin-right: 10px;
-    font-size: 18px;
+    font-size: 16px;
   }
   .file-name {
     margin-top: 5px;
@@ -640,4 +650,15 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+  /* Responsive */
+@media screen and (max-width: 768px) {
+    .producto-detalle {
+      flex-direction: column;
+      padding: 15px;
+    }
   
+    .producto-imagen,
+    .producto-info {
+      max-width: 100%;
+    }
+  }

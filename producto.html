@@ -7,29 +7,6 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <header class="navbar">
-        <nav>
-          <img
-            id="logoTienda"
-            src="assets/logo.jpeg"
-            alt="Logo de la tienda"
-            class="logo-tienda"
-          />
-          <div class="logo">Happy Print</div>
-          <input type="text" placeholder="Buscar productos..." />
-          <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="#">Categorías</a></li>
-            <li class="nav-item carrito-container">
-              <a href="carrito.html" class="carrito-icono">
-                🛒 <span id="contadorCarrito" class="contador-carrito">0</span>
-              </a>
-            </li>
-            <li><a href="#">Mi Cuenta</a></li>
-          </ul>
-          <button id="menu-toggle" class="menu-toggle">☰</button>
-        </nav>
-      </header>
     <div class="main-content">
       <div class="producto-detalle">
         <div class="producto-imagen">
@@ -46,23 +23,62 @@
             <option value="M" selected>M</option>
             <option value="L">L</option>
           </select>
-
-          <button id="btn-agregar">Añadir al carrito</button>
+          <button id="btnPersonalizar">Personalizar y Añadir al Carrito</button>
         </div>
       </div>
       <section class="vr-section">
         <div class="vr-contenido">
           <div class="vr-texto">
             <h2>👓 Explora la prenda en Realidad Aumentada</h2>
-            <p>Escanea el código QR con tu celular o toca el botón si estás en móvil.</p>
-            <a href="https://studio.onirix.com/modelviewer/05df24d3132b437caa6e121af0e4a6df?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUxMjUzLCJhc3NldElkIjo1MzY3MTExLCJyb2xlIjo4LCJpYXQiOjE3NDMwOTc1OTl9.CREOShM8w1h3Dmp82ivUrkwQFhmo2Co8TfNyo2zPGhs" target="_blank" class="vr-boton">Ver en VR</a>
+            <p>
+              Escanea el código QR con tu celular o toca el botón si estás en
+              móvil.
+            </p>
+            <a
+              href="https://studio.onirix.com/modelviewer/05df24d3132b437caa6e121af0e4a6df?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUxMjUzLCJhc3NldElkIjo1MzY3MTExLCJyb2xlIjo4LCJpYXQiOjE3NDMwOTc1OTl9.CREOShM8w1h3Dmp82ivUrkwQFhmo2Co8TfNyo2zPGhs"
+              target="_blank"
+              class="vr-boton"
+              >Ver en VR</a
+            >
           </div>
           <div class="vr-qr">
-            <img src="assets/qr-vr.jpeg" alt="Código QR VR">
+            <img src="assets/qr-vr.jpeg" alt="Código QR VR" />
           </div>
         </div>
       </section>
-      
+    </div>
+    <!-- Modal de Personalización -->
+    <div id="modalPersonalizacion" class="modal">
+        <div class="modal-contenido">
+        <div class="modal-contenido-1">
+            <h2>Personaliza tu playera</h2>
+
+            <!-- Vista previa con Canvas (Movido arriba) -->
+            <div class="preview-container">
+                <canvas id="previewCanvas" width="500" height="500"></canvas>
+            </div>
+
+            <label for="talla">Talla:</label>
+            <select id="talla" class="talla">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+
+            <label for="imagenPersonalizada">Sube una imagen:</label>
+            <label for="imagenPersonalizada" class="file-input-label">
+                <i class="fas fa-upload"></i> Subir Imagen
+            </label>
+            <div class="file-input-container">
+                <input type="file" id="imagenPersonalizada" accept="image/*">
+            </div>
+            <span id="file-name" class="file-name">Ningún archivo seleccionado</span>
+            
+            <button id="confirmarPersonalizacion">Añadir al Carrito</button>
+            <button id="cerrarModal">Cancelar</button>
+        </div>
+        </div>
     </div>
 
     <script type="module" src="js/producto.js"></script>

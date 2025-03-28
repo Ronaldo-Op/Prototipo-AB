@@ -1,6 +1,8 @@
 import { supabase } from './supabase-config.js';
 import { agregarAlCarrito, obtenerCarrito, actualizarContadorCarrito} from "./carrito_proto_ab.js";
-
+document.addEventListener("DOMContentLoaded", function () {
+    actualizarContadorCarrito(); // 🔹 Se ejecuta cuando la página carga
+});
 document.addEventListener("DOMContentLoaded", function () {
     cargarProductos();
 });
@@ -173,6 +175,13 @@ function actualizarVistaPrevia() {
 
 window.agregarAlCarrito = agregarAlCarrito; // Hace la función accesible en index.html
 
-document.addEventListener("DOMContentLoaded", function () {
-    actualizarContadorCarrito(); // 🔹 Se ejecuta cuando la página carga
-});
+const observer = new MutationObserver(() => {
+    const contador = document.getElementById("contadorCarrito");
+    if (contador) {
+      actualizarContadorCarrito();
+      observer.disconnect(); // Deja de observar una vez que está listo
+    }
+  });
+  
+  observer.observe(document.body, { childList: true, subtree: true });
+  
