@@ -21,7 +21,6 @@ body {
   padding-top: 5px;
   padding-bottom: 0;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
   margin-bottom: 0px;
 }
 
@@ -29,7 +28,7 @@ nav {
   padding-left: 10px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  gap: 50px;
   align-items: center;
   max-width: 1200px;
   padding-bottom: 10px;
@@ -48,15 +47,18 @@ nav {
 }
 
 nav input[type="text"] {
-  flex-grow: 1;
+  padding: 10px 15px;
+  width: 40%;
   max-width: 400px;
-  margin: 10px auto;
-  padding: 8px 12px;
-  border-radius: 5px;
-  border: none;
-  display: block;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+  transition: 0.3s ease;
 }
-
+nav input[type="text"]:focus {
+    border-color: #ff9900;
+    box-shadow: 0 0 5px rgba(255, 153, 0, 0.5);
+  }
 /* ---------- NAV LINKS ESCRITORIO ---------- */
 
 .nav-links {

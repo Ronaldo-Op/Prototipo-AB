@@ -10,33 +10,16 @@
     <!-- Modal de Confirmación de Compra -->
     <div id="modalPago" class="modal">
         <div class="modal-contenido">
-            <h2>Resumen de Compra</h2>
-            
-            <div id="resumenCompra" class="resumen-compra">
-                <!-- Aquí se insertarán los productos del carrito -->
-            </div>
-            
-            <h3>Total: <span id="resumenTotal">$0</span></h3>
-            
-            <button id="btnConfirmarPago">Pagar</button>
-            <button id="cerrarModalPago">Cancelar</button>
+          <h2 id="tituloModal">Resumen de Compra</h2>
+          <div id="resumenTotalTexto">
+            <p>Total: <span id="resumenTotal"></span></p>
+          </div>
+          <div id="resumenCompra"></div>
+      
+          <button id="btnConfirmarPago">Confirmar Pago</button>
+          <button id="cerrarModalPago">Cerrar</button>
         </div>
-    </div>
-    <!-- Modal de Confirmación de Compra -->
-    <div id="modalPago" class="modal">
-        <div class="modal-contenido">
-            <h2 id="tituloModal">Resumen de Compra</h2>
-            
-            <div id="resumenCompra" class="resumen-compra">
-                <!-- Aquí se insertarán los productos del carrito -->
-            </div>
-            
-            <h3 id="resumenTotalTexto">Total: <span id="resumenTotal">$0</span></h3>
-            
-            <button id="btnConfirmarPago">Pagar</button>
-            <button id="cerrarModalPago">Cancelar</button>
-        </div>
-    </div>
+      </div>
     <div class="main-content">
     <section class="carrito">
         <h2>Carrito de Compras</h2>
@@ -46,15 +29,13 @@
         <div class="total-carrito">
             <h3>Total: <span id="total-precio">$0</span></h3>
             <button id="btn-pagar">Proceder al Pago</button>
-        </div>
-    </section>
-    </div>
-    
-    <button id="btnPrueba" class="boton-prueba">Probar Animación</button>
     <!-- Pantalla de carga -->
     <div id="pantallaCarga" class="pantalla-carga">
         <div class="loader"></div>
-        <p>Cargando...</p>
+        <p>Procesando pago...</p>
+    </div>
+        </div>
+    </section>
     </div>
 
     <script type="module" src="js/carrito.js"></script>
