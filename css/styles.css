@@ -6,9 +6,17 @@ body {
   background-color: #f5f5f5;
   width: 100%;
 }
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
 
 .main-content {
   width: 100%;
+  background-color: #f5f5f5;
 }
 .main-content-producto {
   width: 100%;
@@ -140,7 +148,7 @@ nav input[type="text"]:focus {
 .banner {
   text-align: center;
   padding: 50px;
-  background-color: #ff9900;
+  background-color: #f5f5f5;
   color: #fff;
 }
 .banner button {
@@ -742,6 +750,7 @@ nav input[type="text"]:focus {
   }
 }
 .banner-carrusel {
+    background-color: #232f3e;
     position: relative;
     width: 100%;
     max-width: 1200px;
