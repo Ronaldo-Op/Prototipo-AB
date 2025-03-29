@@ -15,6 +15,7 @@ h1, h2, h3 {
 
 .main-content {
   margin-top: 130px;
+  overflow-x: hidden;
 }
 
 /* ---------- NAVBAR ESTÁNDAR ---------- */
@@ -69,16 +70,19 @@ nav input[type="text"]:focus {
 /* ---------- NAV LINKS ESCRITORIO ---------- */
 
 .nav-links {
-  border-top: 2px solid #ff9900;
-  list-style: none;
-  display: flex;
-  justify-content: flex-start; /* Alineación a la izquierda */
-  gap: 20px; /* Espaciado uniforme entre botones */
-  margin: 0;
-  padding: 4px 10px; /* Padding horizontal para mantener margen */
-  background-color: #232f3e; /* Asegura fondo si está sobre imagen o transparente */
-  width: 100%;
-}
+    border-top: 2px solid #ff9900;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start; /* Alineación a la izquierda */
+    gap: 20px; /* Espaciado uniforme entre botones */
+    margin: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    white-space: nowrap;
+    padding: 4px 10px; /* Padding horizontal para mantener margen */
+    background-color: #232f3e; /* Asegura fondo si está sobre imagen o transparente */
+    width: 100%;
+  }
 
 .nav-links li {
   display: inline-block;
