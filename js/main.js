@@ -202,3 +202,17 @@ const observer = new MutationObserver(() => {
 });
 
 observer.observe(document.body, { childList: true, subtree: true });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll(".slide");
+    let index = 0;
+  
+    function mostrarSiguienteSlide() {
+      slides[index].classList.remove("active");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("active");
+    }
+  
+    setInterval(mostrarSiguienteSlide, 4000); // Cambia cada 4 segundos
+  });
+  
