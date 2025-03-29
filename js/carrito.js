@@ -53,7 +53,7 @@ function mostrarCarrito() {
     }" class="imagen-base">
                 ${
                   imagenPersonalizada
-                    ? `<img src="${imagenPersonalizada}" alt="Personalización" class="imagen-superpuesta">`
+                    ? `<img src="${imagenPersonalizada}" alt="Personalización" class="imagen-superpuesta" style="opacity: 0.8;">`
                     : ""
                 }
             </div>
