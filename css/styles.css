@@ -452,7 +452,7 @@ nav input[type="text"]:focus {
 }
 .producto-imagen {
   flex: 1;
-  min-width: 390px;
+  min-width: 340px;
   max-width: 480px;
 }
 .producto-imagen img {
