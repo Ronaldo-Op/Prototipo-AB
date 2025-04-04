@@ -765,7 +765,7 @@ nav input[type="text"]:focus {
 .banner-carrusel {
   position: relative;
   width: 100%;
-  height: 32vh;
+  height: 350px;
   overflow: hidden;
   background: #232f3e;
 }
@@ -776,6 +776,8 @@ nav input[type="text"]:focus {
   height: 100%;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
+  align-items: center;
+  justify-content: center;
 }
 
 .banner-carrusel .slide.active {
@@ -787,6 +789,7 @@ nav input[type="text"]:focus {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .banner-carrusel .flecha {
