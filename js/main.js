@@ -203,16 +203,31 @@ const observer = new MutationObserver(() => {
 
 observer.observe(document.body, { childList: true, subtree: true });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const slides = document.querySelectorAll(".slide");
-    let index = 0;
-  
-    function mostrarSiguienteSlide() {
-      slides[index].classList.remove("active");
-      index = (index + 1) % slides.length;
-      slides[index].classList.add("active");
-    }
-  
-    setInterval(mostrarSiguienteSlide, 4000); // Cambia cada 4 segundos
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".banner-carrusel .slide");
+  const btnIzq = document.querySelector(".flecha.izquierda");
+  const btnDer = document.querySelector(".flecha.derecha");
+  let indice = 0;
+
+  function mostrarSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+  }
+
+  btnIzq.addEventListener("click", () => {
+    indice = (indice - 1 + slides.length) % slides.length;
+    mostrarSlide(indice);
   });
-  
+
+  btnDer.addEventListener("click", () => {
+    indice = (indice + 1) % slides.length;
+    mostrarSlide(indice);
+  });
+
+  // Cambiar automáticamente cada 5 segundos
+  setInterval(() => {
+    indice = (indice + 1) % slides.length;
+    mostrarSlide(indice);
+  }, 5000);
+});
+
