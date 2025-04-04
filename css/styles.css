@@ -762,6 +762,10 @@ nav input[type="text"]:focus {
     padding: 8px;
   }
 }
+.banner{
+  width: 100%;
+  padding: 0;
+}
 .banner-carrusel {
   aspect-ratio: 16 / 6; /* Ancho x Alto */
   background-color: #232f3e;
@@ -770,10 +774,7 @@ nav input[type="text"]:focus {
   max-width: 1200px;
   margin: auto;
   overflow: hidden;
-  border-radius: 10px;
   position: relative;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .slide {
@@ -790,7 +791,6 @@ nav input[type="text"]:focus {
 }
 
 .slide img {
-  width: auto;
   height: 100%;
   object-fit: contain;
   object-position: center center;
